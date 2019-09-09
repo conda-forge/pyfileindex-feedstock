@@ -1,7 +1,7 @@
 About pyfileindex
 =================
 
-Home: https://github.com/pyfileindex/pyfileindex
+Home: https://github.com/pyiron/pyfileindex
 
 Package license: BSD-3-Clause
 
