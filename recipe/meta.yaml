@@ -20,12 +20,15 @@ requirements:
     - pip
   run:
     - python
+    - pip
     - pandas
     - scandir
 
 test:
   imports:
     - pyfileindex
+  commands:
+    - pip check
 
 about:
   home: https://github.com/pyiron/pyfileindex
