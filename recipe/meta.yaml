@@ -1,5 +1,5 @@
 {% set name = "pyfileindex" %}
-{% set version = "0.0.5" %}
+{% set version = "0.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d993d0197b26d9152964da9c617e21921e47208160145a356828e192af95eb25
+  sha256: a59c0c06fea64e6474da8db7285b7e4af02b06efd8dbc6455e2b99fc26024e5c
 
 build:
   number: 0
@@ -21,8 +21,8 @@ requirements:
   run:
     - python >=2.7
     - pip
-    - pandas
-    - scandir
+    - pandas >=1.2.1
+    - scandir >=1.10.0
 
 test:
   imports:
