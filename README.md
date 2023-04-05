@@ -1,11 +1,11 @@
-About pyfileindex
-=================
+About pyfileindex-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyfileindex-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/pyiron/pyfileindex
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyfileindex-feedstock/blob/main/LICENSE.txt)
 
 Summary: pythonic file system index
 
@@ -154,7 +154,6 @@ Feedstock Maintainers
 =====================
 
 * [@jan-janssen](https://github.com/jan-janssen/)
-* [@muh-hassani](https://github.com/muh-hassani/)
 * [@niklassiemer](https://github.com/niklassiemer/)
 * [@pmrv](https://github.com/pmrv/)
 * [@pyiron-runner](https://github.com/pyiron-runner/)
