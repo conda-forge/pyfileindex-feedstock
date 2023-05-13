@@ -1,0 +1,25 @@
+From 1c064fe81caaa8a3d9689a8b51a0ca9bdb9dc2ff Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jan=20Jan=C3=9Fen?= <janssen@mpie.de>
+Date: Sat, 13 May 2023 16:42:04 -0700
+Subject: [PATCH] Handle files which do not exist
+
+---
+ pyfileindex/pyfileindex.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/pyfileindex/pyfileindex.py b/pyfileindex/pyfileindex.py
+index 00b7f60..535de8d 100644
+--- a/pyfileindex/pyfileindex.py
++++ b/pyfileindex/pyfileindex.py
+@@ -151,7 +151,10 @@ def _get_changes_quick(self):
+             list: pandas.DataFrame with new entries, list of changed files and list of deleted paths
+         """
+         path_exists_bool_lst = [os.path.exists(p) for p in self._df.path.values]
+-        path_deleted_lst = self._df[~np.array(path_exists_bool_lst)].path.values
++        if len(path_exists_bool_lst) != 0:
++            path_deleted_lst = self._df[~np.array(path_exists_bool_lst)].path.values
++        else:
++            path_deleted_lst = np.array([])
+         df_exists = self._df[path_exists_bool_lst]
+         stat_lst = [os.stat(p) for p in df_exists.path.values]
+         st_mtime = [s.st_mtime for s in stat_lst]
