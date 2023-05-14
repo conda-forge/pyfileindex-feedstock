@@ -1,5 +1,5 @@
 {% set name = "pyfileindex" %}
-{% set version = "0.0.8" %}
+{% set version = "0.0.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 04bf7d2ab49284d56414e6b6a9fee1031e149547211221101af9551dfc605d25
-  patches:
-    - empty.patch
+  sha256: e8ac91fa3e3a4d1bce59935b1369816687c27ab5a1201908ca3a55d96e348737
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
