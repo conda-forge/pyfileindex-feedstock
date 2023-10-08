@@ -1,26 +1,25 @@
 {% set name = "pyfileindex" %}
-{% set version = "0.0.11" %}
+{% set version = "0.0.12" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 39bb9e2ee14af18a8d3a0587c4f9962eb1445809e96b5cb14f08c742b2909665
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyfileindex-{{ version }}.tar.gz
+  sha256: 47c9ce61e250f44373048cd9248ddad3c32f2a04077b440652350d7f5f02156c
 
 build:
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - pip
   run:
-    - python >=3.7
-    - pip
+    - python >=3.8
     - pandas >=2.0.1
     - scandir >=1.10.0
 
@@ -29,21 +28,14 @@ test:
     - pyfileindex
   commands:
     - pip check
+  requires:
+    - pip
 
 about:
-  home: https://github.com/pyiron/pyfileindex
+  home: https://github.com/pyfileindex/pyfileindex
+  summary: pyfileindex - pythonic file system index
   license: BSD-3-Clause
-  license_family: BSD
   license_file: LICENSE
-  summary: pythonic file system index
-
-  description: |
-    The pyfileindex helps to keep track of files in a specific directory, 
-    to monitor added files, modified files and deleted files. The module 
-    is compatible with Python 2.7-3.7 but restricted to Unix-like system 
-    - Windows is not supported.
-  doc_url: https://github.com/pyiron/pyfileindex
-  dev_url: https://github.com/pyiron/pyfileindex
 
 extra:
   recipe-maintainers:
