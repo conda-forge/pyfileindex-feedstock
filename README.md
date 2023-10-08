@@ -3,21 +3,11 @@ About pyfileindex-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyfileindex-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/pyiron/pyfileindex
+Home: https://github.com/pyfileindex/pyfileindex
 
 Package license: BSD-3-Clause
 
-Summary: pythonic file system index
-
-Development: https://github.com/pyiron/pyfileindex
-
-Documentation: https://github.com/pyiron/pyfileindex
-
-The pyfileindex helps to keep track of files in a specific directory,
-to monitor added files, modified files and deleted files. The module
-is compatible with Python 2.7-3.7 but restricted to Unix-like system
-- Windows is not supported.
-
+Summary: pyfileindex - pythonic file system index
 
 Current build status
 ====================
