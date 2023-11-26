@@ -1,5 +1,5 @@
 {% set name = "pyfileindex" %}
-{% set version = "0.0.14" %}
+{% set version = "0.0.15" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyfileindex-{{ version }}.tar.gz
-  sha256: d5f037e11f585ad0a9e7ca27ca1f0747a3a0ba04189ad017fc619314a4060f7b
+  sha256: 7a389f03794ed24ed579805d51dcb49a7a9d72ca1d1bb5fe78e719cc6ae050ce
 
 build:
   noarch: python
