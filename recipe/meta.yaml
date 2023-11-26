@@ -18,6 +18,9 @@ requirements:
   host:
     - python >=3.8
     - pip
+    - numpy
+    - pandas
+    - scandir
   run:
     - numpy >=1.23.5,<=1.26.0
     - python >=3.8
