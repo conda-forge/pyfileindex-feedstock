@@ -8,11 +8,13 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyfileindex-{{ version }}.tar.gz
   sha256: ace44b595915863157c67a4b522352f192671226a567b3b1de9cca4409ee096c
+  patches:
+    - numpy.patch
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
