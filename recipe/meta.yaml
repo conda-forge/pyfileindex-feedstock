@@ -1,5 +1,5 @@
 {% set name = "pyfileindex" %}
-{% set version = "0.0.26" %}
+{% set version = "0.0.27" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyfileindex-{{ version }}.tar.gz
-  sha256: 3758dd0d58a6179d4fee3551c3832b0686a1a6ccfb7ac397599fcf3a8afa6474
+  sha256: ace44b595915863157c67a4b522352f192671226a567b3b1de9cca4409ee096c
 
 build:
   noarch: python
@@ -24,7 +24,7 @@ requirements:
     - versioneer
     - toml
   run:
-    - numpy >=1.23.5,<=2.0.1
+    - numpy >=1.23.5,<=2.1.0
     - python >=3.8
     - pandas >=1.5.3,<=2.2.2
     - scandir ==1.10.0
