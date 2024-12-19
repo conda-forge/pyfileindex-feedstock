@@ -6,17 +6,17 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyfileindex-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyfileindex-{{ version }}.tar.gz
   sha256: 7b279cb324f8fbe65ec4e9db8f428b43ff3125097194ea48f5ce1298e4d0462f
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools
     - numpy
@@ -26,7 +26,7 @@ requirements:
     - toml
   run:
     - numpy >=1.23.5,<=2.1.2
-    - python >=3.8
+    - python >={{ python_min }}
     - pandas >=1.5.3,<=2.2.3
     - scandir ==1.10.0
 
@@ -37,6 +37,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/pyfileindex/pyfileindex
