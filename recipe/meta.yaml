@@ -1,5 +1,5 @@
 {% set name = "pyfileindex" %}
-{% set version = "0.0.34" %}
+{% set version = "0.0.35" %}
 
 package:
   name: {{ name|lower }}
@@ -25,7 +25,7 @@ requirements:
     - versioneer
     - toml
   run:
-    - numpy >=1.23.5,<=2.2.3
+    - numpy >=1.23.5,<=2.2.4
     - python >={{ python_min }}
     - pandas >=1.5.3,<=2.2.3
     - scandir ==1.10.0
