@@ -18,11 +18,11 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - hatchling
+    - hatch-vcs
     - numpy
     - pandas
     - scandir
-    - versioneer
     - toml
   run:
     - numpy >=1.23.5,<=2.2.4
