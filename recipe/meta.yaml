@@ -1,5 +1,5 @@
 {% set name = "pyfileindex" %}
-{% set version = "0.0.37" %}
+{% set version = "0.0.38" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyfileindex-{{ version }}.tar.gz
-  sha256: a1df73765aa882eaa72ef7cb16ecfc35ac5134f714fea0a4eeceb7b34f00c2f1
+  sha256: 7eb099dd99b77b261808e329fdeab8faf2aa8e132bd52ee06d054ca4b4adffe7
 
 build:
   noarch: python
@@ -27,7 +27,7 @@ requirements:
   run:
     - numpy >=1.23.5,<=2.2.4
     - python >={{ python_min }}
-    - pandas >=1.5.3,<=2.3.0
+    - pandas >=1.5.3,<=2.3.1
     - scandir ==1.10.0
 
 test:
