@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyfileindex
-  version: 0.0.38
+  version: 0.0.39
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyfileindex-${{ version }}.tar.gz
-  sha256: 7eb099dd99b77b261808e329fdeab8faf2aa8e132bd52ee06d054ca4b4adffe7
+  sha256: 28139524d3ab1a08bff3e3c5f8d4062a37c261f982aba091abd316e079581729
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -28,7 +28,7 @@ requirements:
     - scandir
     - toml
   run:
-    - numpy >=1.23.5,<=2.2.4
+    - numpy >=1.23.5,<=2.3.2
     - python >=${{ python_min }}
     - pandas >=1.5.3,<=2.3.1
     - scandir ==1.10.0
