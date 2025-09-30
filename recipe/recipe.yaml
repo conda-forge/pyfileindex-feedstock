@@ -28,7 +28,7 @@ requirements:
     - scandir
     - toml
   run:
-    - numpy >=1.23.5,<=2.3.2
+    - numpy >=1.23.5,<=2.3.3
     - python >=${{ python_min }}
     - pandas >=1.5.3,<=2.3.2
     - scandir ==1.10.0
