@@ -25,13 +25,11 @@ requirements:
     - hatch-vcs
     - numpy
     - pandas
-    - scandir
     - toml
   run:
-    - numpy >=1.23.5,<=2.3.3
+    - numpy >=1.23.5,<=2.3.4
     - python >=${{ python_min }}
     - pandas >=1.5.3,<=2.3.3
-    - scandir ==1.10.0
 
 tests:
   - python:
