@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyfileindex
-  version: "0.1.0"
+  version: 0.1.1
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyfileindex-${{ version }}.tar.gz
-  sha256: 85a9c2f611d7d97d13979d84367c15068c93e575e9525ac6bb9494c1285ce8fd
+  sha256: 8f5e7389954a6536c4acba12e18046c8ce4203035207c40e20620a14ed88e89f
 
 build:
   number: 0
@@ -26,10 +26,9 @@ requirements:
     - numpy
     - pandas
   run:
-    - numpy >=1.23.5,<=2.3.4
+    - numpy >=1.23.5,<=2.3.5
     - python >=${{ python_min }}
     - pandas >=1.5.3,<=2.3.3
-
 tests:
   - python:
       imports:
