@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyfileindex
-  version: "0.1.6"
+  version: "0.2.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyfileindex-${{ version }}.tar.gz
-  sha256: 40dbb41a558e2236d16484e92dcb882a3b0e80595119b42843967f6c8c6afd7a
+  sha256: b2f14fb0718c80ec9b9b166954e5e0a1c84febbf67d37513ccc1e92572370dad
 
 build:
   number: 0
