@@ -5,8 +5,8 @@ Subject: [PATCH] [Fix] Fixes based on testing in pyiron_base (#298)
 
 ---
  src/pyfileindex/pyfileindex.py | 2 +-
- src/pyfileindex/watcher.py     | 1 +
- 2 files changed, 2 insertions(+), 1 deletion(-)
+ src/pyfileindex/watcher.py     | 4 ++++
+ 2 files changed, 5 insertions(+), 1 deletion(-)
 
 diff --git a/src/pyfileindex/pyfileindex.py b/src/pyfileindex/pyfileindex.py
 index 54144c5..2d07434 100644
@@ -25,6 +25,26 @@ diff --git a/src/pyfileindex/watcher.py b/src/pyfileindex/watcher.py
 index 55e64e7..5ce9b72 100644
 --- a/src/pyfileindex/watcher.py
 +++ b/src/pyfileindex/watcher.py
+@@ -1,3 +1,4 @@
++import atexit
+ import threading
+ from collections.abc import Generator
+ from typing import Optional
+@@ -53,12 +64,14 @@ def start(self) -> None:
+             next(self._generator)
+         self._thread = threading.Thread(target=self._worker, daemon=True)
+         self._thread.start()
++        atexit.register(self.stop)
+ 
+     def stop(self) -> None:
+         """
+         Stop the background file system watcher. Safe to call even if no
+         watcher is running.
+         """
++        atexit.unregister(self.stop)
+         if self._stop_event is not None:
+             self._stop_event.set()
+         if self._thread is not None:
 @@ -86,6 +93,7 @@ def drain_pending_changes(self, timeout: float = 0.0) -> set:
              set: set of (watchfiles.Change, path) tuples
          """
