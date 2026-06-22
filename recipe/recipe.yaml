@@ -11,9 +11,11 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyfileindex-${{ version }}.tar.gz
   sha256: b2f14fb0718c80ec9b9b166954e5e0a1c84febbf67d37513ccc1e92572370dad
+  patches:
+    - watch.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
