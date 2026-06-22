@@ -4,9 +4,23 @@ Date: Mon, 22 Jun 2026 10:12:08 +0200
 Subject: [PATCH] [Fix] Fixes based on testing in pyiron_base (#298)
 
 ---
- src/pyfileindex/watcher.py | 1 +
- 1 file changed, 1 insertion(+)
+ src/pyfileindex/pyfileindex.py | 2 +-
+ src/pyfileindex/watcher.py     | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
+diff --git a/src/pyfileindex/pyfileindex.py b/src/pyfileindex/pyfileindex.py
+index 54144c5..2d07434 100644
+--- a/src/pyfileindex/pyfileindex.py
++++ b/src/pyfileindex/pyfileindex.py
+@@ -40,7 +40,7 @@ def __init__(
+         if watch:
+             self._watcher = FileSystemWatcher(path=self._path)
+             self._watcher.start()
+-        if df is None:
++        if df is None or watch:
+             self._df = self._create_df_from_lst(
+                 [self._get_lst_entry_from_path(entry=self._path)]
+                 + list(self._scandir(path=self._path, df=None, recursive=True))
 diff --git a/src/pyfileindex/watcher.py b/src/pyfileindex/watcher.py
 index 55e64e7..5ce9b72 100644
 --- a/src/pyfileindex/watcher.py
