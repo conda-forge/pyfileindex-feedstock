@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyfileindex
-  version: "0.2.0"
+  version: "0.2.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,12 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyfileindex-${{ version }}.tar.gz
-  sha256: b2f14fb0718c80ec9b9b166954e5e0a1c84febbf67d37513ccc1e92572370dad
-  patches:
-    - watch.patch
+  sha256: eed28d7f8d11c051b9c354738969ec2498470ea184a84796d89da8effbf006dd
 
 build:
-  number: 3
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
