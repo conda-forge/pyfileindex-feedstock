@@ -1,0 +1,21 @@
+From daef99de15706e63a6711332e931c826d87d648f Mon Sep 17 00:00:00 2001
+From: Jan Janssen <jan-janssen@users.noreply.github.com>
+Date: Mon, 22 Jun 2026 10:12:08 +0200
+Subject: [PATCH] [Fix] Fixes based on testing in pyiron_base (#298)
+
+---
+ src/pyfileindex/watcher.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/pyfileindex/watcher.py b/src/pyfileindex/watcher.py
+index 55e64e7..5ce9b72 100644
+--- a/src/pyfileindex/watcher.py
++++ b/src/pyfileindex/watcher.py
+@@ -86,6 +93,7 @@ def drain_pending_changes(self, timeout: float = 0.0) -> set:
+             set: set of (watchfiles.Change, path) tuples
+         """
+         if timeout > 0:
++            self._changes_available.clear()
+             self._changes_available.wait(timeout)
+         with self._lock:
+             changes = self._pending_changes
